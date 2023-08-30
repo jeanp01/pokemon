@@ -114,22 +114,24 @@ const Pokedex = () => {
             <Header />
 
 
-            <section className="py-6 px-2">
-            <h3> Welcome {nameTrainer}, here you can find your favorite pokemon</h3>
-
-            <form onSubmit={handleSubmit} >
-                <div>
-                    <input id="namePokemon" placeholder="search your pokemon" type="text" />
-                    <button>search</button>
+            <section className="py-6 px-5 font-bold text-xl ">
+            <h3 className="pb-8"> <span className="text-red-500">Welcome {nameTrainer}</span>, here you can find your favorite pokemon</h3>
+            
+            <form className=" grid items-center justify-center   md:pt-7  md:pb-7 border p-8 " onSubmit={handleSubmit} >
+                <div className="md:px-4 mb-4 grid">
+                    <input className="md:p-2 md:px-2 md:w-auto md:p-4 md:px-8  border border-9 rounded-md mb-4 border-red-500" id="namePokemon" placeholder="search your pokemon" type="text" />
+                    <button className=" md:px-8 md:p-4 text-white bg-red-500 p-4 rounded-md items-center justify-center">search</button>
                 </div>
 
-                <select onChange={(e) => setCurrentType(e.target.value)}>
-                    <option value="" >All</option>
+                
+                <select className=" sm:py-4 border border-red-500 rounded-md mb-4 " onChange={(e) => setCurrentType(e.target.value)}>
+                    <option className=" md:w-auto text-red-800 md:px-8 border border-9 border-red-500 " value="" >All</option>
                     {types.map((type) => (
                         <option className="capitalize" value={type} key={type}>{type}</option>
                     ))}
                     
                 </select>
+                
             </form>
             </section>
 
@@ -153,7 +155,7 @@ const Pokedex = () => {
             </ul>
 
             {/*seccion lista de pokemons */}
-            <section className="px-2 grid grid-cols-auto-cols-min gap-6 grid-cols-[280px] border border-9 ">
+            <section className="grid gap-8 grid-cols-[repeat(auto-fill,_280px)] justify-center max-w-[1024px] mx-auto py-6 ">
                 {pokemonInPage.map((pokemon) => (
                     <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
                 ))}

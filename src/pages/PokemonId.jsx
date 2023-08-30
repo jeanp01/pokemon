@@ -3,6 +3,7 @@ import Header from "../components/pokedex/Header"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
+
 const PokemonId = () => {
 
     const [pokemon, setPokemon] = useState(null)
@@ -26,9 +27,15 @@ const PokemonId = () => {
     return(
         <main>
             <Header />
-
         <section>
-
+            
+            <section className={`border-green-600 h-80  ${[pokemon?.types[0].type.name]}`}>
+                <div className=" border-black relative ">
+                    <img className="absolute top-0   " src={pokemon?.sprites.other["official-artwork"].front_default} alt={pokemon?.name} />
+                </div>
+            </section>
+            
+        <section className="mt-40">
         <article>
             <section>
                 <h4>stats</h4>
@@ -51,9 +58,8 @@ const PokemonId = () => {
                 </section>
             </section>
         </article>
-
         </section>
-
+        </section>
         </main>
     )
 }

@@ -10,7 +10,7 @@ const handleClickLogout = () => {
     dispatch(setNameTrainer(""))
 }
     return (
-        <section className="relative">
+        <section className="relative max-h-screen">
             <div className="bg-red-600 h-20 relative">
                 <div className="absolute left-0 bottom-0 w-[220px] xxs:w-[290px] sm:w-[400px]">
                     <img src="/images/pokedex.png" alt="" />

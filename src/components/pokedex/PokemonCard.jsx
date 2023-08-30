@@ -75,10 +75,10 @@ const PokemonCard = ({pokemonUrl}) => {
             </section>
 
 
-            <section className=" border border-9 ">
-                <h3 className="mt-14">{pokemon?.name}</h3>
-                <h5>{formatTypesPokemon(pokemon?.types)}</h5>
-                <span>type</span>
+            <section className="">
+                <h3 className= {` mt-14 text-3xl text-center position-relative flex items-center justify-center ${pokeLinearGradients[pokemon?.types[0].type.name]}`}>{pokemon?.name}</h3>
+                <h5 className="mt-1 text-center position-relative flex items-center justify-center">{formatTypesPokemon(pokemon?.types)}</h5>
+                <span className="mt-1 text-center position-relative flex items-center justify-center">type</span>
 
                 <hr />
 
